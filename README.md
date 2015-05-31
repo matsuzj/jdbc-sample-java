@@ -1,4 +1,6 @@
-ORMを使わず低レベルのレイヤーでデータベースの操作をしてみることを目的とする。  
+# jdbc-sample-java [![Build Status](https://travis-ci.org/matsuzj/jdbc-sample-java.svg?branch=master)](https://travis-ci.org/matsuzj/jdbc-sample-java)
+
+ORMを使わず低レベルのレイヤーでデータベースの操作をしてみることを目的とする。
 実装確認方法としてJunitを使ってみる。
 
 サンプルを作成するにあたり参考にしたリンク
