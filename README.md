@@ -7,3 +7,4 @@ ORMを使わず低レベルのレイヤーでデータベースの操作をし�
 
   * http://javaworld.helpfulness.jp/post-31/
   * http://blog.codebook-10000.com/entry/20130625/1372174314
+
