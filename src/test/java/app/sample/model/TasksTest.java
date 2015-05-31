@@ -43,10 +43,19 @@ public class TasksTest {
 
     // テストメソッドに付与
     @Test
-    public void printSelectAllTest() throws SQLException {
+    public void selectAllTest() throws SQLException {
         Tasks task = new Tasks();
-        List taskList = task.printSelectAll();
+        List taskList = task.selectAll();
         assertEquals(taskList.size(),5);
+    }
+
+    // テストメソッドに付与
+    @Test
+    public void selectByIdTest() throws SQLException {
+        Tasks task = new Tasks();
+        TasksBean taskOne = task.selectById(5);
+        assertEquals(taskOne.getId(),5);
+
     }
 
 
