@@ -1,0 +1,9 @@
+language: java
+jdk: oraclejdk8
+before_script:
+  - mysql -uroot -e "create database sample"
+script:
+  - gradle flywayClean
+  - gradle flywaymigrate
+  - gradle test
+
