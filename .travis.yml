@@ -8,6 +8,7 @@ before_script:
 script:
   - ./gradlew flywayClean
   - ./gradlew flywaymigrate
+  - ./gradlew build
   - ./gradlew test
 after_success:
 - COVERALLS_REPO_TOKEN=4rtBJna06rkMNuZD1NTowvMfSwKN14s6U ./gradlew cobertura coveralls
