@@ -13,11 +13,11 @@ public class Tasks{
 
     private String selectAll = "SELECT * FROM tasks";
 
-    public List printSelectAll() throws SQLException {
+    public ArrayList<TasksBean> printSelectAll() throws SQLException {
         Connection con = DatabaseManager.getConnection();
         Statement stmt = con.createStatement();
         ResultSet result = stmt.executeQuery(selectAll);
-        ArrayList<TasksBean> taskList = new ArrayList();
+        ArrayList<TasksBean> taskList = new ArrayList<TasksBean>();
         while (result.next()) {
             TasksBean tasks = new TasksBean();
             tasks.setId(result.getInt(1));
@@ -28,7 +28,6 @@ public class Tasks{
             tasks.setUpdatedAt(result.getTimestamp(6));
             taskList.add(tasks);
         }
-        System.out.print(taskList);
         return taskList;
     }
 

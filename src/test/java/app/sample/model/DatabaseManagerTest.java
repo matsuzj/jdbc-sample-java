@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import app.sample.model.DatabaseManager;
+import static org.hamcrest.core.IsInstanceOf.instanceOf;
 
 
 public class DatabaseManagerTest {
@@ -43,7 +43,7 @@ public class DatabaseManagerTest {
     @Test
     public void getConnectionTest() throws SQLException {
         Connection con = DatabaseManager.getConnection();
-        System.out.println(con);
+        assertThat(con, instanceOf(com.mysql.jdbc.JDBC4Connection.class));
         con.close();
     }
 
