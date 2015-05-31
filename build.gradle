@@ -82,7 +82,7 @@ buildscript {
 jacocoTestReport {
     reports {
         xml.enabled = true
-        html.enabled = true
     }
 }
 
+coveralls.jacocoReportPath = 'build/reports/jacoco/test/jacocoTestReport.xml'
