@@ -8,3 +8,7 @@ before_script:
 script:
   - ./gradlew flywaymigrate
   - ./gradlew test
+  - ./gradlew check
+  - ./gradlew build
+after_success:
+  - ./gradlew jacocoTestReport coveralls

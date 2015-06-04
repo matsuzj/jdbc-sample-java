@@ -41,6 +41,7 @@ dependencies {
 // testCompile：プロジェクトのテストコードをコンパイルするのに必要な依存関係。デフォルトで、コンパイルされたプロダクトクラスと、コンパイル時の依存関係も含まれる。
 dependencies {
     testCompile 'junit:junit:4.12'
+    testCompile 'org.dbunit:dbunit:2.4.3'
 }
 
 buildscript {
@@ -66,3 +67,25 @@ flyway {
     password='password'
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.flywaydb:flyway-gradle-plugin:3.2.1"
+        classpath 'mysql:mysql-connector-java:5.1.13'
+    }
+}
+
+// Flyway
+apply plugin: "org.flywaydb.flyway"
+
+flyway {
+    driver='com.mysql.jdbc.Driver'
+    url='jdbc:mysql://127.0.0.1/sample'
+    user='root'
+    password='password'
+}

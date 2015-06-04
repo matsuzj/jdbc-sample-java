@@ -13,7 +13,6 @@ public class DatabaseManager {
     private static String user = "root";
     private static String pass = "password";
 
-
     public static Connection getConnection() {
         Connection con = null;
         try {
@@ -26,8 +25,6 @@ public class DatabaseManager {
         }
         return con;
     }
-
-
 
 }
 
