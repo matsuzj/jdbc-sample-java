@@ -67,25 +67,23 @@ flyway {
     password='password'
 }
 
+apply plugin: 'jacoco'
+apply plugin: 'com.github.kt3k.coveralls'
+
 buildscript {
     repositories {
         mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
     }
+
     dependencies {
-        classpath "org.flywaydb:flyway-gradle-plugin:3.2.1"
-        classpath 'mysql:mysql-connector-java:5.1.13'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1'
     }
 }
 
-// Flyway
-apply plugin: "org.flywaydb.flyway"
-
-flyway {
-    driver='com.mysql.jdbc.Driver'
-    url='jdbc:mysql://127.0.0.1/sample'
-    user='root'
-    password='password'
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+    }
 }
+
+coveralls.jacocoReportPath = 'build/reports/jacoco/test/jacocoTestReport.xml'
