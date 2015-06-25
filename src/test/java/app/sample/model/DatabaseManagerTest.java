@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 
 
-public class DatabaseManagerTest {
+public class DatabaseManagerTest extends BaseModelTest{
 
     // テストメソッドに付与
     @Test
